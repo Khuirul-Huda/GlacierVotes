@@ -1,0 +1,8 @@
+#GlacierVotes Main Configuration
+
+#Config Version (DONT TOUCH!)
+configver: 1.0
+
+#API KEY IS REQUIRED !
+#API KEY from minecraftpocket-servers.com
+apikey: null
