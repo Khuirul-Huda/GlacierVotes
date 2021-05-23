@@ -17,6 +17,7 @@ private String apikey = Main.getInstance().config.getString("apikey");
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String name = player.getName();
+        checkvote(name);
         
 }
 public void checkvote(String name) {
@@ -31,6 +32,8 @@ if ( status == 200 ) {
   if ( response.toString() == "1") {
     //voted not claimed
     player.sendMessage("Terimakasih sudah vote");
+    claimvote(name);
+    //runCommand();
   } 
   if ( response.toString() == "2") {
     //voted claimed
@@ -45,4 +48,16 @@ if ( status == 200 ) {
 }
 http.disconnect();
 }
+
+public void claimvote(String name){
+  String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="apikey+"&username="+name;
+  URL url = new URL(claimapiurl);
+HttpURLConnection http = (HttpURLConnection)url.openConnection();
+(http.getResponseCode() + " " + http.getResponseMessage());
+int status = http.getResponseCode();
+int response = http.getResponseMessage();
+http.closeConnection();
+}
+
+
 }
