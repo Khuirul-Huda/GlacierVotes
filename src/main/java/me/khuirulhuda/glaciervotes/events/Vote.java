@@ -14,6 +14,7 @@ import java.io.File;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import org.bukkit.configuration.InvalidConfigurationException;
 
 
