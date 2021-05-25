@@ -43,8 +43,8 @@ public class Main extends JavaPlugin implements Listener {
     
    public void getConfig (String config){
      FileConfiguration conf = this.getConfig();
-     String value = conf.getString(config);
-     return value;
+     conf.getString(config);
+     
    }
     
     private void createCustomConfig() {

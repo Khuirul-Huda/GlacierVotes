@@ -45,7 +45,8 @@ if ( status == 200 ) {
     player.sendMessage("Halo, Kamu Belum Vote silakan vote di vote renderycrafty.net dan dapatkan hadiah");
   }
 } else {
-  Main.getInstance().getLogger().high("Error"+status+response);
+  String logme = "Error"+status+response;
+  Main.getInstance().getLogger().high(logme);
 }
 http.disconnect();
 }
@@ -57,7 +58,8 @@ HttpURLConnection http = (HttpURLConnection)url.openConnection();
 
 int status = http.getResponseCode();
 String response = http.getResponseMessage();
-http.closeConnection();
+http.disconnect();
+
 }
 
 
