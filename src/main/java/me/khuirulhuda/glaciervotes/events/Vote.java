@@ -31,19 +31,13 @@ private String apikey = Main.getInstance().getConfig().getString("apikey");
   String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
 try {
 URL url = new URL(api);
-} catch(MalformedURLException err) {
-  String errstr = err.toString;
-  Main.getInstance().getLogger().severe(errstr);
-}
-try {
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
-
-int status = http.getResponseCode();
-String response = http.getResponseMessage();
 } catch (MalformedURLException ex) {
   String logm = ex.toString();
-  Main.getInstance().getLogger.severe(logm);
+  Main.getInstance().getLogger().severe(logm);
 }
+int status = http.getResponseCode();
+String response = http.getResponseMessage();
 if ( status == 200 ) {
   if ( response == "1") {
     //vote not claimed
