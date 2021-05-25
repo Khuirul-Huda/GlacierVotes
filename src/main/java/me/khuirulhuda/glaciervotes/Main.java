@@ -27,11 +27,21 @@ public class Main extends JavaPlugin implements Listener {
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
         createCustomConfig();
     }
+    
+    @Override
+    public void onDisable() {
+        this.getLogger().info("GlacierVotes RenderyCrafty Successfully Disabled");
+        
     public static Main getInstance() {
       return INSTANCE;
     }
-       public FileConfiguration getCustomConfig() {
+    
+    public FileConfiguration getCustomConfig() {
         return this.customConfig;
+    }
+    
+    public void reloadcfg() {
+      this.reloadConfig();
     }
     
     private void createCustomConfig() {
@@ -40,13 +50,6 @@ public class Main extends JavaPlugin implements Listener {
             customConfigFile.getParentFile().mkdirs();
             saveResource("config.yml", false);
          }
-         
-         
-     
-         
-    @Override
-    public void onDisable() {
-        this.getLogger().info("GlacierVotes RenderyCrafty Successfully Disabled");
         
         customConfig= new YamlConfiguration();
         try {
