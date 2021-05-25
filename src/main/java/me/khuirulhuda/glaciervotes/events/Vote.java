@@ -55,7 +55,7 @@ if ( status == 200 ) {
   Main.getInstance().getLogger().severe(logme);
 }
 http.disconnect();
-} catch(MalformedURLException | IOException q){
+} catch(IOException | MalformedURLException q){
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
 }
@@ -70,7 +70,7 @@ HttpURLConnection http = (HttpURLConnection)url.openConnection();//start
 int status = http.getResponseCode();
 String response = http.getResponseMessage();//end
 http.disconnect();
-} catch (MalformedURLException | IOException p) {
+} catch (IOException | MalformedURLException p) {
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
 }
