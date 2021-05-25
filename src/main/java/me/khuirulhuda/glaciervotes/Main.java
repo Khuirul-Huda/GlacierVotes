@@ -41,6 +41,9 @@ public class Main extends JavaPlugin implements Listener {
             saveResource("config.yml", false);
          }
          
+         
+     
+         
     @Override
     public void onDisable() {
         this.getLogger().info("GlacierVotes RenderyCrafty Successfully Disabled");
