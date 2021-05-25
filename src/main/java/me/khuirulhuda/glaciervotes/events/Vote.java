@@ -40,8 +40,8 @@ if ( status == 200 ) {
   }
   if ( response.toString() == "0") {
     // not found
-    player.sendMessage("Halo, Kamu Belum Vote silakan vote di vote renderycrafty.net dan dapatkan hadiah")
-  
+    player.sendMessage("Halo, Kamu Belum Vote silakan vote di vote renderycrafty.net dan dapatkan hadiah");
+  }
 } else {
   Main.getInstance().getLoggger().high("Error"+status+response);
 }

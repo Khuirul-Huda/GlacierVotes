@@ -31,7 +31,8 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         this.getLogger().info("GlacierVotes RenderyCrafty Successfully Disabled");
-        
+    }
+    
     public static Main getInstance() {
       return INSTANCE;
     }
