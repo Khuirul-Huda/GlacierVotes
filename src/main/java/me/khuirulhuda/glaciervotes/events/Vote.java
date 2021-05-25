@@ -20,8 +20,8 @@ import org.bukkit.configuration.InvalidConfigurationException;
 
 public class Vote implements Listener {
   
-FileConfiguration conf = this.getConfig();
-private String apikey = conf.getString("apikey");
+
+private String apikey = Main.getInstance().getConfig().getString("apikey");
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -52,7 +52,7 @@ if ( status == 200 ) {
   }
 } else {
   String logme = "Error"+status+response;
-  Main.getInstance().getLogger().high(logme);
+  Main.getInstance().getLogger().severe(logme);
 }
 http.disconnect();
 }
