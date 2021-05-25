@@ -32,7 +32,8 @@ private String apikey = Main.getInstance().getConfig().getString("apikey");
 try {
 URL url = new URL(api);
 } catch(MalformedURLException err) {
-  Main.getInstance().getLogger().severe("Error in line 33!")
+  String errstr = err.toString;
+  Main.getInstance().getLogger().severe(errstr);
 }
 try {
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
@@ -75,7 +76,8 @@ int status = http.getResponseCode();
 String response = http.getResponseMessage();
 http.disconnect();
 } catch (MalformedURLException p) {
-  //need something
+  String logp = p.toString();
+  Main.getInstance().getLogger().severe(logp);
 }
 
 }
