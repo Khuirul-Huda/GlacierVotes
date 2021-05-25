@@ -32,10 +32,7 @@ private String apikey = Main.getInstance().getConfig().getString("apikey");
 try {
 URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
-} catch (MalformedURLException ex) {
-  String logm = ex.toString();
-  Main.getInstance().getLogger().severe(logm);
-}
+
 int status = http.getResponseCode();
 String response = http.getResponseMessage();
 if ( status == 200 ) {
@@ -58,6 +55,10 @@ if ( status == 200 ) {
   Main.getInstance().getLogger().severe(logme);
 }
 http.disconnect();
+} catch(MalformedURLException q){
+  String qstr = q.toString();
+  Main.getInstance().getLogger().severe(qstr);
+}
 }
 
 public void claimvote(String name){
