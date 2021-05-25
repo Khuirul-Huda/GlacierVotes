@@ -9,13 +9,19 @@ import java.net.HttpURLConnection;
 import org.bukkit.entity.Player;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.logging.Logger;
+import java.io.File;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import java.io.IOException;
+import org.bukkit.configuration.InvalidConfigurationException;
 
 
 
 public class Vote implements Listener {
   
-
-private String apikey = Main.getInstance().getConfig("apikey");
+FileConfiguration conf = this.getConfig();
+private String apikey = conf.getString("apikey");
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();

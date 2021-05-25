@@ -41,11 +41,7 @@ public class Main extends JavaPlugin implements Listener {
         return this.customConfig;
     }
     
-   public void getConfig (String config){
-     FileConfiguration conf = this.getConfig();
-     conf.getString(config);
-     
-   }
+   
     
     private void createCustomConfig() {
         customConfigFile = new File(getDataFolder(), "config.yml");
