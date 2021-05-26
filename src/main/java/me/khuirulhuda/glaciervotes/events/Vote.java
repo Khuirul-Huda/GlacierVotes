@@ -33,7 +33,7 @@ public class Vote implements Listener {
       
       //debug
       if (debugmode) {
-        Main.getInstance().getLogger().debug("Using API KEY : "+apikey);
+        debug("Using API KEY : "+apikey);
       }
       
       Player player = event.getPlayer();
