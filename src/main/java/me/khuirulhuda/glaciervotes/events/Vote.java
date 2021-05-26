@@ -42,12 +42,12 @@ if ( status == 200 ) {
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
   try {
-  URL url = new URL(claimapiurl);
-HttpURLConnection http = (HttpURLConnection)url.openConnection();//start
+  URL urll = new URL(claimapiurl);
+HttpURLConnection httpp = (HttpURLConnection)urll.openConnection();//start
 
-int status = http.getResponseCode();
-String response = http.getResponseMessage();//end
-http.disconnect();
+int statuss = httpp.getResponseCode();
+String responsee = httpp.getResponseMessage();//end
+httpp.disconnect();
 } catch (IOException p) {
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
