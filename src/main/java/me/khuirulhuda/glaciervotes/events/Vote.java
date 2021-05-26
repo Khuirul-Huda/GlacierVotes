@@ -27,7 +27,7 @@ public class Vote implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
        boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
-         debug("Player Joined")
+         debug("Player Joined");
        }
       String apikey = Main.getInstance().getConfig().getString("apikey");
       
