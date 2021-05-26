@@ -40,7 +40,18 @@ if ( status == 200 ) {
   if ( response == "1") {
     //vote not claimed
     player.sendMessage("Terimakasih sudah vote");
-    claimvote(name);
+    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
+  try {
+  URL url = new URL(claimapiurl);
+HttpURLConnection http = (HttpURLConnection)url.openConnection();//start
+
+int status = http.getResponseCode();
+String response = http.getResponseMessage();//end
+http.disconnect();
+} catch (IOException p) {
+  String logp = p.toString();
+  Main.getInstance().getLogger().severe(logp);
+}
     //runCommand();
   } 
   if ( response == "2") {
@@ -63,18 +74,7 @@ http.disconnect();
 }
 
 public void claimvote(String name){
-  String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
-  try {
-  URL url = new URL(claimapiurl);
-HttpURLConnection http = (HttpURLConnection)url.openConnection();//start
-
-int status = http.getResponseCode();
-String response = http.getResponseMessage();//end
-http.disconnect();
-} catch (IOException p) {
-  String logp = p.toString();
-  Main.getInstance().getLogger().severe(logp);
-}
+  
 
 }
 
