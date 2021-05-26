@@ -3,8 +3,8 @@ package me.khuirulhuda.glaciervotes;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.Listener;
 import org.bukkit.Bukkit;
-import me.khuirulhuda.glaciervotes.events.*;
-import me.khuirulhuda.glaciervotes.commands.*;
+import me.khuirulhuda.glaciervotes.events.Vote;
+import me.khuirulhuda.glaciervotes.commands.Reload;
 import org.bukkit.ChatColor;
 import java.io.File;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -21,14 +21,15 @@ public class Main extends JavaPlugin implements Listener {
   
     @Override
     public void onEnable() {
-        this.getCommand("gvreload").setExecutor(new Reload());
-        Bukkit.getPluginManager().registerEvents(new Vote(), this);
-        INSTANCE = this;
-        this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
+
         //createCustomConfig();
         getConfig().options().copyDefaults(true);
         saveConfig();
         saveDefaultConfig();
+        this.getCommand("gvreload").setExecutor(new Reload());
+        Bukkit.getPluginManager().registerEvents(new Vote(), this);
+        INSTANCE = this;
+        this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
     }
     
     @Override
