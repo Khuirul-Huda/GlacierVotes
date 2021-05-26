@@ -107,7 +107,7 @@ public void claimvote(String name){
 }
 
 public void debug(String debugstr) {
-  Main.getInstance().getLogger().debug(debugstr);
+  Main.getInstance().getLogger().config(ChatColor.WHITE+debugstr);
 }
 
 
