@@ -23,10 +23,9 @@ import org.bukkit.ChatColor;
 public class Vote implements Listener {
   
 
-private String apikey = Main.getInstance().getConfig().getString("apikey");
-
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+      private String apikey = Main.getInstance().getConfig().getString("apikey");
         Player player = event.getPlayer();
         String name = player.getName();
 
