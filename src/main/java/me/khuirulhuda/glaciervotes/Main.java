@@ -25,7 +25,8 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
         INSTANCE = this;
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
-        createCustomConfig();
+        //createCustomConfig();
+        this.saveDefaultConfig();
     }
     
     @Override
