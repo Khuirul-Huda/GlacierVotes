@@ -7,8 +7,8 @@ author: Khuirul-Huda
 load: POSTWORLD
 
 commands:
-    reload:
+    gvreload:
         description: Reload the plugin (op only)
-        usage: /gv reload
+        usage: /gvreload
        
         

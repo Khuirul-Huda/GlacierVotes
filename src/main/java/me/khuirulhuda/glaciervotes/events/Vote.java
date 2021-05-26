@@ -16,15 +16,16 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.ChatColor;
 
 
 
 public class Vote implements Listener {
   
 
-private String apikey = Main.getInstance().getConfig().getString("apikey");
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+      String apikey = Main.getInstance().getConfig().getString("apikey");
         Player player = event.getPlayer();
         String name = player.getName();
 
@@ -39,7 +40,18 @@ if ( status == 200 ) {
   if ( response == "1") {
     //vote not claimed
     player.sendMessage("Terimakasih sudah vote");
-    claimvote(name);
+    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
+  try {
+  URL urll = new URL(claimapiurl);
+HttpURLConnection httpp = (HttpURLConnection)urll.openConnection();//start
+
+int statuss = httpp.getResponseCode();
+String responsee = httpp.getResponseMessage();//end
+httpp.disconnect();
+} catch (IOException p) {
+  String logp = p.toString();
+  Main.getInstance().getLogger().severe(logp);
+}
     //runCommand();
   } 
   if ( response == "2") {
@@ -62,18 +74,7 @@ http.disconnect();
 }
 
 public void claimvote(String name){
-  String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
-  try {
-  URL url = new URL(claimapiurl);
-HttpURLConnection http = (HttpURLConnection)url.openConnection();//start
-
-int status = http.getResponseCode();
-String response = http.getResponseMessage();//end
-http.disconnect();
-} catch (IOException p) {
-  String logp = p.toString();
-  Main.getInstance().getLogger().severe(logp);
-}
+  
 
 }
 
