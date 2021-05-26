@@ -21,14 +21,14 @@ public class Main extends JavaPlugin implements Listener {
   
     @Override
     public void onEnable() {
-        this.getCommand("reload").setExecutor(new Reload());
+        this.getCommand("gv reload").setExecutor(new Reload());
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
         INSTANCE = this;
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
         //createCustomConfig();
-        this.getConfig().options().copyDefaults(true);
-        this.saveConfig();
-        //this.saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        saveDefaultConfig();
     }
     
     @Override
