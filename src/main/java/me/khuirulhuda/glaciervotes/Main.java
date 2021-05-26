@@ -26,7 +26,9 @@ public class Main extends JavaPlugin implements Listener {
         INSTANCE = this;
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
         //createCustomConfig();
-        this.saveDefaultConfig();
+        this.getConfig().options().copyDefaults(true);
+        this.saveConfig();
+        //this.saveDefaultConfig();
     }
     
     @Override
