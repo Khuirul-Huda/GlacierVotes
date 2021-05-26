@@ -21,7 +21,7 @@ public class Main extends JavaPlugin implements Listener {
   
     @Override
     public void onEnable() {
-        this.getCommand("gv reload").setExecutor(new Reload());
+        this.getCommand("gvreload").setExecutor(new Reload());
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
         INSTANCE = this;
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
