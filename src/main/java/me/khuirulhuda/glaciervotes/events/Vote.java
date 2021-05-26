@@ -25,7 +25,7 @@ public class Vote implements Listener {
 
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-      private String apikey = Main.getInstance().getConfig().getString("apikey");
+      String apikey = Main.getInstance().getConfig().getString("apikey");
         Player player = event.getPlayer();
         String name = player.getName();
 
