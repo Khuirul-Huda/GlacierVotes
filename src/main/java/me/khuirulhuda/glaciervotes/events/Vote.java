@@ -22,12 +22,9 @@ import org.bukkit.ChatColor;
 
 public class Vote implements Listener {
   
-try {
+
 private String apikey = Main.getInstance().getConfig().getString("apikey");
-} catch {
-  private String apikey = "null";
-  Main.getInstance().getLogger().severe(ChatColor.RED+"Unable to retrieve apikey from config.yml!")
-}
+
 @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
