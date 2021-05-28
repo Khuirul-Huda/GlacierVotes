@@ -25,10 +25,7 @@ public class Vote implements Listener {
 
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
-      System.out.println("PlayerJoinEvent");//debug
       
-      
-      debug("test");//test gan
        boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
          debug("Player Joined");
@@ -43,7 +40,7 @@ public class Vote implements Listener {
       Player player = event.getPlayer();
       String name = player.getName();
       if (debugmode) {
-        debug("Player Joined"+name);
+        debug("Player Joined "+name);
       }
 
       String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
