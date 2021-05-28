@@ -23,19 +23,46 @@ import org.bukkit.ChatColor;
 public class Vote implements Listener {
   
 
-@EventHandler
+    @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
+      System.out.println("PlayerJoinEvent");//debug
+      
+      
+      debug("test");//test gan
+       boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
+       if (debugmode) {
+         debug("Player Joined");
+       }
       String apikey = Main.getInstance().getConfig().getString("apikey");
-        Player player = event.getPlayer();
-        String name = player.getName();
+      
+      //debug
+      if (debugmode) {
+        debug("Using API KEY : "+apikey);
+      }
+      
+      Player player = event.getPlayer();
+      String name = player.getName();
+      if (debugmode) {
+        debug("Player Joined"+name);
+      }
 
-  String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
+      String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
+     
+      
 try {
 URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
 
 int status = http.getResponseCode();
 String response = http.getResponseMessage();//end
+
+if (debugmode) {
+  debug("HTTP Response Code:"+status);
+  debug("HTTP Response:"+response);
+}
+
+
+
 if ( status == 200 ) {
   if ( response == "1") {
     //vote not claimed
@@ -45,8 +72,13 @@ if ( status == 200 ) {
   URL urll = new URL(claimapiurl);
 HttpURLConnection httpp = (HttpURLConnection)urll.openConnection();//start
 
+
 int statuss = httpp.getResponseCode();
 String responsee = httpp.getResponseMessage();//end
+if (debugmode){
+  debug("POST REQUEST CODE:"+statuss);
+  debug("POST RESPONSE:"+responsee);
+} 
 httpp.disconnect();
 } catch (IOException p) {
   String logp = p.toString();
@@ -76,6 +108,10 @@ http.disconnect();
 public void claimvote(String name){
   
 
+}
+
+public void debug(String debugstr) {
+  Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
 }
 
 
