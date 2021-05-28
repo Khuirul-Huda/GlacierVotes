@@ -26,8 +26,8 @@ public class Vote implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
       System.out.println("PlayerJoinEvent");//debug
-      Main.getInstance().getLogger().config("Config Log");
-      Main.getInstance().getLogger().warning("Warning");
+      
+      
       debug("test");//test gan
        boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
@@ -111,7 +111,7 @@ public void claimvote(String name){
 }
 
 public void debug(String debugstr) {
-  Main.getInstance().getLogger().config(ChatColor.WHITE+debugstr);
+  Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
 }
 
 
