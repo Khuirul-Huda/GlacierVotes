@@ -85,7 +85,7 @@ int responseCode = http.getResponseCode();
     }
 
 
-if ( status == 200 ) {
+if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response == "1") {
     //vote not claimed
     player.sendMessage("Terimakasih sudah vote");
