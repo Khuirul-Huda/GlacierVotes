@@ -51,13 +51,36 @@ URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
 
 int status = http.getResponseCode();
-String response = http.getResponseMessage();//end
+String httpresponse = http.getResponseMessage();//end
 
 if (debugmode) {
   debug("HTTP Response Code:"+status);
-  debug("HTTP Response:"+response);
+  debug("HTTP Response:"+httpresponse);
 }
+int responseCode = http.getResponseCode();
+    InputStream inputStream;
+    if (200 <= responseCode && responseCode <= 299) {
+        inputStream = http.getInputStream();
+    } else {
+        inputStream = http.getErrorStream();
+    }
 
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+            inputStream));
+
+    StringBuilder respons = new StringBuilder();
+    String currentLine;
+
+    while ((currentLine = in.readLine()) != null) 
+        respons.append(currentLine);
+
+    in.close();
+    String response = respons.toString();
+
+    if (debugmode){
+      debug("Response: "+response);
+    }
 
 
 if ( status == 200 ) {
