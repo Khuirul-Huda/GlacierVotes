@@ -7,5 +7,11 @@ configver: 1.1
 ##API KEY from minecraftpocket-servers.com
 apikey: "null"
 
+# Commands run when someone votes your server
+# %player% = Player
+commands:
+- give %player% diamond_sword 1
+- give %player% diamond_axe 1
+
 ##Enable Debug Mode? (Show More Information)
 debug: false

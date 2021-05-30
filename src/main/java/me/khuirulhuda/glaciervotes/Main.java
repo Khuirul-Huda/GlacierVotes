@@ -22,8 +22,8 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         INSTANCE = this;
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        //getConfig().options().copyDefaults(true); disabled
+        //saveConfig();disabled
         saveDefaultConfig();
         this.getCommand("gvreload").setExecutor(new Reload());
         Bukkit.getPluginManager().registerEvents(new Vote(), this);

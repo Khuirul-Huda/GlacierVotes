@@ -88,6 +88,9 @@ int responseCode = http.getResponseCode();
 if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
     //vote not claimed
+    for (String command : getConfig().getStringList("commands")) {
+    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
+}
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
   try {
