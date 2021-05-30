@@ -20,6 +20,7 @@ import org.bukkit.ChatColor;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
+import org.bukkit.Bukkit;
 
 
 public class Vote implements Listener {
@@ -88,7 +89,7 @@ int responseCode = http.getResponseCode();
 if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
     //vote not claimed
-    for (String command : getConfig().getStringList("commands")) {
+    for (String command : Main.getInstance().getConfig().getStringList("commands")) {
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
 }
     player.sendMessage("Terimakasih sudah vote");
