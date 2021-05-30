@@ -22,9 +22,7 @@ import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.bukkit.Bukkit;
 
-
 public class Vote implements Listener {
-  
 
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -33,9 +31,9 @@ public class Vote implements Listener {
        if (debugmode) {
          debug("Player Joined");
        }
+       
       String apikey = Main.getInstance().getConfig().getString("apikey");
       
-      //debug
       if (debugmode) {
         debug("Using API KEY : "+apikey);
       }
@@ -47,8 +45,7 @@ public class Vote implements Listener {
       }
 
       String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
-     
-      
+    
 try {
 URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
@@ -60,6 +57,7 @@ if (debugmode) {
   debug("HTTP Response Code:"+status);
   debug("HTTP Response:"+httpresponse);
 }
+
 int responseCode = http.getResponseCode();
     InputStream inputStream;
     if (200 <= responseCode && responseCode <= 299) {
@@ -74,30 +72,28 @@ int responseCode = http.getResponseCode();
 
     StringBuilder respons = new StringBuilder();
     String currentLine;
-
     while ((currentLine = in.readLine()) != null) 
         respons.append(currentLine);
-
     in.close();
+    
     String response = respons.toString();
 
     if (debugmode){
       debug("Response: "+response);
     }
 
-
 if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
-    //vote not claimed
+    
     for (String command : Main.getInstance().getConfig().getStringList("commands")) {
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
 }
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
+ 
   try {
   URL urll = new URL(claimapiurl);
 HttpURLConnection httpp = (HttpURLConnection)urll.openConnection();//start
-
 
 int statuss = httpp.getResponseCode();
 String responsee = httpp.getResponseMessage();//end
@@ -129,16 +125,11 @@ http.disconnect();
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
 }
-}
-
-public void claimvote(String name){
-  
-
-}
+      
+    }
 
 public void debug(String debugstr) {
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
 }
-
-
+  
 }

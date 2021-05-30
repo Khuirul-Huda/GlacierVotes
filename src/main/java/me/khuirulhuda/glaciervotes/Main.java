@@ -22,8 +22,6 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         INSTANCE = this;
-        //getConfig().options().copyDefaults(true); disabled
-        //saveConfig();disabled
         saveDefaultConfig();
         this.getCommand("gvreload").setExecutor(new Reload());
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
@@ -44,7 +42,7 @@ public class Main extends JavaPlugin implements Listener {
     }
     
    
-    
+    //old
     private void createCustomConfig() {
         customConfigFile = new File(getDataFolder(), "config.yml");
         if (!customConfigFile.exists()) {
