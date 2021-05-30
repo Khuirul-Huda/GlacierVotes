@@ -86,7 +86,7 @@ int responseCode = http.getResponseCode();
 
 
 if ( 200 <= responseCode && responseCode <= 299 ) {
-  if ( response == 1 ) {
+  if ( response.contains("1")) {
     //vote not claimed
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
@@ -108,11 +108,11 @@ httpp.disconnect();
 }
     //runCommand();
   } 
-  if ( response == 2 ) {
+  if ( response.contains("2")) {
     //voted claimed
     
   }
-  if ( response == 0 ) {
+  if ( response.contains("0")) {
     // not found
     player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
