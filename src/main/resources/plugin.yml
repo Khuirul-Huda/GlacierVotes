@@ -8,7 +8,7 @@ load: POSTWORLD
 
 commands:
     gvreload:
-        description: Reload the plugin (op only)
+        description: Reload the plugin (console only)
         usage: /gvreload
        
         
