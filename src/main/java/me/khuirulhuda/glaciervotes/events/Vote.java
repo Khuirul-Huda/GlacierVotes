@@ -17,7 +17,9 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.ChatColor;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.InputStream;
 
 
 public class Vote implements Listener {
@@ -25,10 +27,7 @@ public class Vote implements Listener {
 
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
-      System.out.println("PlayerJoinEvent");//debug
       
-      
-      debug("test");//test gan
        boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
          debug("Player Joined");
@@ -43,7 +42,7 @@ public class Vote implements Listener {
       Player player = event.getPlayer();
       String name = player.getName();
       if (debugmode) {
-        debug("Player Joined"+name);
+        debug("Player Joined "+name);
       }
 
       String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
@@ -54,17 +53,40 @@ URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
 
 int status = http.getResponseCode();
-String response = http.getResponseMessage();//end
+String httpresponse = http.getResponseMessage();//end
 
 if (debugmode) {
   debug("HTTP Response Code:"+status);
-  debug("HTTP Response:"+response);
+  debug("HTTP Response:"+httpresponse);
 }
+int responseCode = http.getResponseCode();
+    InputStream inputStream;
+    if (200 <= responseCode && responseCode <= 299) {
+        inputStream = http.getInputStream();
+    } else {
+        inputStream = http.getErrorStream();
+    }
+
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+            inputStream));
+
+    StringBuilder respons = new StringBuilder();
+    String currentLine;
+
+    while ((currentLine = in.readLine()) != null) 
+        respons.append(currentLine);
+
+    in.close();
+    String response = respons.toString();
+
+    if (debugmode){
+      debug("Response: "+response);
+    }
 
 
-
-if ( status == 200 ) {
-  if ( response == "1") {
+if ( 200 <= responseCode && responseCode <= 299 ) {
+  if ( response.contains("1")) {
     //vote not claimed
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
@@ -86,13 +108,13 @@ httpp.disconnect();
 }
     //runCommand();
   } 
-  if ( response == "2") {
+  if ( response.contains("2")) {
     //voted claimed
     
   }
-  if ( response == "0") {
+  if ( response.contains("0")) {
     // not found
-    player.sendMessage("Halo, Kamu Belum Vote silakan vote di vote renderycrafty.net dan dapatkan hadiah");
+    player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
 } else {
   String logme = "Error"+status+response;

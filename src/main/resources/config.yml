@@ -1,11 +1,11 @@
-#GlacierVotes Main Configuration
+##GlacierVotes Main Configuration
 
-#Config Version (DONT TOUCH!)
+##Config Version (DONT TOUCH!)
 configver: 1.1
 
-#API KEY IS REQUIRED !
-#API KEY from minecraftpocket-servers.com
+##API KEY IS REQUIRED !
+##API KEY from minecraftpocket-servers.com
 apikey: "null"
 
-#Enable Debug Mode? (Show More Information)
+##Enable Debug Mode? (Show More Information)
 debug: false

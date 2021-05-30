@@ -16,7 +16,7 @@ public class Reload implements CommandExecutor {
             player.sendMessage(ChatColor.RED+"No Permissions!");
         } else {
           Main.getInstance().reloadConfig();
-          Main.getInstance().getLogger().info("[GlacierVotes] Config Reloaded");
+          Main.getInstance().getLogger().info("Config Reloaded");
         }
 
         
