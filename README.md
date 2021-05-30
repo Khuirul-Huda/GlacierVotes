@@ -1,3 +1,11 @@
+![GitHub all releases](https://img.shields.io/github/downloads/Khuirul-Huda/GlacierVotes/total?style=for-the-badge)<br>
+[![GitHub license](https://img.shields.io/github/license/Khuirul-Huda/GlacierVotes?style=for-the-badge)](https://github.com/Khuirul-Huda/GlacierVotes/blob/main/LICENSE)<br>
+![GitHub branch checks state](https://img.shields.io/github/checks-status/Khuirul-Huda/GlacierVotes/main?style=for-the-badge)<br>
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Khuirul-Huda/GlacierVotes?style=for-the-badge)<br>
+![Author](https://img.shields.io/badge/AUTHOR-Khuirul%20Huda-green?style=for-the-badge)<br>
+[![hits](https://hits.deltapapa.io/github/Khuirul-Huda/GlacierVotes.svg)](#)
+
+
 # GlacierVotes
 GlacierVotes is a lightweight spigot plugin to give rewards for your votes.
 
