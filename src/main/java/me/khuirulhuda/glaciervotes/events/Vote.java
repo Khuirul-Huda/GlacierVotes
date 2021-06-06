@@ -45,16 +45,19 @@ public class Vote implements Listener {
       }
 
     boolean spasi = name.contains(" ");
+    String fname = name;
 if (spasi) {
   String fname = name.replace(" ", "%20");
   
   String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
-} else {
+} 
+ 
 
-      String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
-      String fname = name;
-}
-    //idk
+
+      String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+      
+
+    
 try {
 URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
