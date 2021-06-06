@@ -44,7 +44,16 @@ public class Vote implements Listener {
         debug("Player Joined "+name);
       }
 
+    boolean spasi = name.contains(" ");
+if (spasi) {
+  String fname = name.replace(" ", "%20");
+  
+  String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+} else {
+
       String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
+      String fname = name;
+}
     
 try {
 URL url = new URL(api);
@@ -89,7 +98,7 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
 }
     player.sendMessage("Terimakasih sudah vote");
-    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+name;
+    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fname;
  
   try {
   URL urll = new URL(claimapiurl);
