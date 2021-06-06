@@ -54,7 +54,7 @@ if (spasi) {
       String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+name;
       String fname = name;
 }
-    
+    //idk
 try {
 URL url = new URL(api);
 HttpURLConnection http = (HttpURLConnection)url.openConnection();//start 
