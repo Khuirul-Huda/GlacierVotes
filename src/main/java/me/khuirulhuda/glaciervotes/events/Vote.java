@@ -47,7 +47,7 @@ public class Vote implements Listener {
     boolean spasi = name.contains(" ");
     String fname = name;
 if (spasi) {
-  String fname = name.replace(" ", "%20");
+   fname = name.replace(" ", "%20");
   
   String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
 } 
