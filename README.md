@@ -19,3 +19,9 @@ Glaciervotes are made for servers that usually use Geyser and are registered at 
 4. Reload the plugin
 5. You're done ✅
 
+# Stats
+![stats](https://bstats.org/signatures/bukkit/Glaciervotes.svg)
+
+# Test Server
+mc.renderycrafty.net
+
