@@ -46,6 +46,15 @@ public class Vote implements Listener {
 
     boolean spasi = name.contains(" ");
     String fname = name;
+    String gname = name;
+    
+    if (spasi) {
+      int sploc = gname.indexOf(" ");
+      gname = gname.substring(0, sploc);
+    }
+    
+    
+    
 if (spasi) {
    fname = name.replace(" ", "%20");
   
@@ -98,7 +107,15 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
     
     for (String command : Main.getInstance().getConfig().getStringList("commands")) {
+      
+      if (spasi) {
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gname));
+        
+      } else {
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
+    
+      }
+    
 }
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fname;
