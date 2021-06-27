@@ -21,6 +21,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.bukkit.Bukkit;
+import java.util.*;
 
 public class Vote implements Listener {
 
@@ -39,7 +40,7 @@ public class Vote implements Listener {
       }
       
       Player player = event.getPlayer();
-      final String name = player.getName();
+      String name = player.getName();
       if (debugmode) {
         debug("Player Joined "+name);
       }
@@ -172,7 +173,10 @@ http.disconnect();
     }
 
 public void debug(String debugstr) {
+  Bukkit.getScheduler().runTask(this, () -> {
+
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
+  });
 }
   
 }
