@@ -48,12 +48,14 @@ public class Vote implements Listener {
       }
 
     boolean spasi = name.contains(" ");
-    final String fname = name;
-    final String gname = name;
+     String fname = name;
+     String gname = name;
     
     if (spasi) {
       int sploc = gname.indexOf(" ");
       gname = gname.substring(0, sploc);
+    } else {
+      
     }
     
     
@@ -65,6 +67,8 @@ if (spasi) {
 
       final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
       final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
+      final String gnamee = gname;
+      final String fnamee = fname;
       
 Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
 
@@ -113,7 +117,7 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
       if (spasi) {
         Bukkit.getScheduler().runTask(this, () -> {
 
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gname));
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gnamee));
         });
       } else {
         Bukkit.getScheduler().runTask(this, () -> {
@@ -124,7 +128,7 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
     
 }
     player.sendMessage("Terimakasih sudah vote");
-    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fname;
+    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fnamee;
  
   try {
   URL urll = new URL(claimapiurl);
@@ -155,7 +159,7 @@ httpp.disconnect();
     player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
 } else {
-  Bukkit.getScheduler().runTask(this, () -> {
+  Main.getInstance().getScheduler().runTask(this, () -> {
 
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
