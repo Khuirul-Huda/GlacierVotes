@@ -111,12 +111,12 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
         Bukkit.getScheduler().runTask(this, () -> {
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gname));
-        }
+        });
       } else {
         Bukkit.getScheduler().runTask(this, () -> {
 
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
-        }
+        });
       }
     
 }
@@ -156,7 +156,7 @@ httpp.disconnect();
 
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
-  }
+  });
 }
 http.disconnect();
 } catch(IOException q){
@@ -164,10 +164,10 @@ http.disconnect();
 
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
-  }
+  });
 }
       
-    }//async?
+    });//async?
       
     }
 
