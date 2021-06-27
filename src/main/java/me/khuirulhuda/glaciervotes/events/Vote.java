@@ -61,7 +61,7 @@ if (spasi) {
 } 
 
       final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
-      final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands")
+      final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
       
 Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
 
