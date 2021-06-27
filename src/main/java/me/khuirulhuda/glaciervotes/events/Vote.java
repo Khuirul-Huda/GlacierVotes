@@ -70,7 +70,7 @@ if (spasi) {
       final String gnamee = gname;
       final String fnamee = fname;
       
-Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () -> {
 
     
 try {
@@ -120,7 +120,7 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gnamee));
         });
       } else {
-        Main.getInstance().getScheduler().runTask(this, () -> {
+        Bukkit.getScheduler().runTask(this, () -> {
 
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
         });
@@ -142,7 +142,7 @@ if (debugmode){
 } 
 httpp.disconnect();
 } catch (IOException p) {
-  Main.getInstance().getSchedulerr().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(this, () -> {
 
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
@@ -167,7 +167,7 @@ httpp.disconnect();
 }
 http.disconnect();
 } catch(IOException q){
-  Main.getInstance().getSchedulerr().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(this, () -> {
 
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
@@ -179,7 +179,7 @@ http.disconnect();
     }
 
 public void debug(String debugstr) {
-  Main.getInstance().getScheduler().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(this, () -> {
 
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
   });
