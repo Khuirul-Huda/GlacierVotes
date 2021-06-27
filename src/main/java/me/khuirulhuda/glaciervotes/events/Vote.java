@@ -159,7 +159,7 @@ httpp.disconnect();
     player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
 } else {
-  Main.getInstance().getScheduler().runTask(Main.getInstance(), () -> {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
