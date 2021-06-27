@@ -115,12 +115,12 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
     for (String command : listcmd) {
       
       if (spasi) {
-        Bukkit.getScheduler().runTask(this, () -> {
+        Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gnamee));
         });
       } else {
-        Bukkit.getScheduler().runTask(this, () -> {
+        Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
         });
@@ -142,7 +142,7 @@ if (debugmode){
 } 
 httpp.disconnect();
 } catch (IOException p) {
-  Bukkit.getScheduler().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
@@ -159,7 +159,7 @@ httpp.disconnect();
     player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
 } else {
-  Main.getInstance().getScheduler().runTask(this, () -> {
+  Main.getInstance().getScheduler().runTask(Main.getInstance(), () -> {
 
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
@@ -167,7 +167,7 @@ httpp.disconnect();
 }
 http.disconnect();
 } catch(IOException q){
-  Bukkit.getScheduler().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
@@ -179,7 +179,7 @@ http.disconnect();
     }
 
 public void debug(String debugstr) {
-  Bukkit.getScheduler().runTask(this, () -> {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
 
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
   });
