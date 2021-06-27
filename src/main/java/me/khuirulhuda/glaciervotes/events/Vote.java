@@ -27,26 +27,26 @@ public class Vote implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
       
-       boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
+      final boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
          debug("Player Joined");
        }
        
-      String apikey = Main.getInstance().getConfig().getString("apikey");
+     final String apikey = Main.getInstance().getConfig().getString("apikey");
       
       if (debugmode) {
         debug("Using API KEY : "+apikey);
       }
       
       Player player = event.getPlayer();
-      String name = player.getName();
+      final String name = player.getName();
       if (debugmode) {
         debug("Player Joined "+name);
       }
 
     boolean spasi = name.contains(" ");
-    String fname = name;
-    String gname = name;
+    final String fname = name;
+    final String gname = name;
     
     if (spasi) {
       int sploc = gname.indexOf(" ");
@@ -57,14 +57,13 @@ public class Vote implements Listener {
     
 if (spasi) {
    fname = name.replace(" ", "%20");
-  
-  String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+  //String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
 } 
- 
 
-
-      String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+      final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+      final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands")
       
+Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
 
     
 try {
@@ -106,14 +105,18 @@ int responseCode = http.getResponseCode();
 if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
     
-    for (String command : Main.getInstance().getConfig().getStringList("commands")) {
+    for (String command : listcmd) {
       
       if (spasi) {
+        Bukkit.getScheduler().runTask(this, () -> {
+
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gname));
-        
+        }
       } else {
+        Bukkit.getScheduler().runTask(this, () -> {
+
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
-    
+        }
       }
     
 }
@@ -132,8 +135,11 @@ if (debugmode){
 } 
 httpp.disconnect();
 } catch (IOException p) {
+  Bukkit.getScheduler().runTask(this, () -> {
+
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
+  }
 }
     //runCommand();
   } 
@@ -146,14 +152,22 @@ httpp.disconnect();
     player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
   }
 } else {
+  Bukkit.getScheduler().runTask(this, () -> {
+
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
+  }
 }
 http.disconnect();
 } catch(IOException q){
+  Bukkit.getScheduler().runTask(this, () -> {
+
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
+  }
 }
+      
+    }//async?
       
     }
 
