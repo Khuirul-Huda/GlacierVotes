@@ -139,7 +139,7 @@ httpp.disconnect();
 
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
-  }
+  });
 }
     //runCommand();
   } 
