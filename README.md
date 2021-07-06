@@ -23,5 +23,5 @@ Glaciervotes are made for servers that usually use Geyser and are registered at 
 ![stats](https://bstats.org/signatures/bukkit/Glaciervotes.svg)
 
 # Test Server
-mc.renderycrafty.net
+mc.renderycrafty.my.id
 
