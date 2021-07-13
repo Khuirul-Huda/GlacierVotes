@@ -21,7 +21,7 @@ Glaciervotes are made for servers that usually use Geyser and are registered at 
 ## How to use
 1. Download latest [release](https://github.com/Khuirul-Huda/GlacierVotes/releases)
 2. Put it in the "plugins" folder
-3. Modify config.yml and edit [apikey](https://minecraftpocket-servers.com/servers/manage/) 
+3. Modify config.yml and edit [apikey](https://minecraftpocket-servers.com/servers/manage/)
 4. Reload the plugin
 5. You're done ✅
 
@@ -30,6 +30,7 @@ Glaciervotes are made for servers that usually use Geyser and are registered at 
 
 # Test Server
 mc.renderycrafty.my.id
+play.renderycrafty.my.id
 
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
