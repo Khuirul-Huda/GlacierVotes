@@ -5,7 +5,7 @@
 ![Author](https://img.shields.io/badge/AUTHOR-Khuirul%20Huda-green?style=for-the-badge)<br>
 [![hits](https://hits.deltapapa.io/github/Khuirul-Huda/GlacierVotes.svg)](#)
 
-
+Not Stable
 # GlacierVotes
 GlacierVotes is a lightweight spigot plugin to give rewards for your votes.
 
