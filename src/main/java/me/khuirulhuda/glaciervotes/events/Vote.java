@@ -30,6 +30,8 @@ public class Vote implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
       
+      final boolean shouldNotice = Main.getInstance().getConfig().getBoolean("notice");
+      final String nvmsg = Main.getInstance().getConfig().getString("nvmessage");
       final boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
          debug("Player Joined");
@@ -156,7 +158,9 @@ httpp.disconnect();
   }
   if ( response.contains("0")) {
     // not found
-    player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
+    if (shouldNotice) {
+    player.sendMessage(ChatColor.YELLOW+nvmsg);
+    }
   }
 } else {
   Bukkit.getScheduler().runTask(Main.getInstance(), () -> {

@@ -1,4 +1,7 @@
 ##GlacierVotes Main Configuration
+## Github : https://github.com/Khuirul-Huda/GlacierVotes
+# Made with ❤️ by @khuirul_huda
+# not affiliated with minecraftpocket-servers.com
 
 ##Config Version (DONT TOUCH!)
 configver: 1.1
@@ -7,11 +10,17 @@ configver: 1.1
 ##API KEY from minecraftpocket-servers.com
 apikey: "null"
 
+#Send message to players?(no-Vote)
+notice: true
+#Notice Message
+nvmessage: "Heyy, please support this server with your votes"
+
 # Commands run when someone votes your server
 # %player% = Player
 commands:
 - give %player% diamond_sword 1
 - give %player% diamond_axe 1
+
 
 ##Enable Debug Mode? (Show More Information)
 debug: false
