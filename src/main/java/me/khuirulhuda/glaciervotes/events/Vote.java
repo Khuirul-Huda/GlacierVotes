@@ -21,18 +21,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.bukkit.Bukkit;
+import java.util.*;
+import org.bukkit.scheduler.BukkitRunnable;
+
 
 public class Vote implements Listener {
 
     @EventHandler(priority=EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
       
-       boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
+      final boolean shouldNotice = Main.getInstance().getConfig().getBoolean("notice");
+      final String nvmsg = Main.getInstance().getConfig().getString("nvmessage");
+      final boolean debugmode = Main.getInstance().getConfig().getBoolean("debug");
        if (debugmode) {
          debug("Player Joined");
        }
        
-      String apikey = Main.getInstance().getConfig().getString("apikey");
+     final String apikey = Main.getInstance().getConfig().getString("apikey");
       
       if (debugmode) {
         debug("Using API KEY : "+apikey);
@@ -45,26 +50,29 @@ public class Vote implements Listener {
       }
 
     boolean spasi = name.contains(" ");
-    String fname = name;
-    String gname = name;
+     String fname = name;
+     String gname = name;
     
     if (spasi) {
       int sploc = gname.indexOf(" ");
       gname = gname.substring(0, sploc);
+    } else {
+      
     }
     
     
     
 if (spasi) {
    fname = name.replace(" ", "%20");
-  
-  String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+  //String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
 } 
- 
 
-
-      String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+      final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
+      final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
+      final String gnamee = gname;
+      final String fnamee = fname;
       
+Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () -> {
 
     
 try {
@@ -106,19 +114,23 @@ int responseCode = http.getResponseCode();
 if ( 200 <= responseCode && responseCode <= 299 ) {
   if ( response.contains("1")) {
     
-    for (String command : Main.getInstance().getConfig().getStringList("commands")) {
+    for (String command : listcmd) {
       
       if (spasi) {
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gname));
-        
+        Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", gnamee));
+        });
       } else {
+        Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
-    
+        });
       }
     
 }
     player.sendMessage("Terimakasih sudah vote");
-    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fname;
+    String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fnamee;
  
   try {
   URL urll = new URL(claimapiurl);
@@ -132,8 +144,11 @@ if (debugmode){
 } 
 httpp.disconnect();
 } catch (IOException p) {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
   String logp = p.toString();
   Main.getInstance().getLogger().severe(logp);
+  });
 }
     //runCommand();
   } 
@@ -143,22 +158,35 @@ httpp.disconnect();
   }
   if ( response.contains("0")) {
     // not found
-    player.sendMessage(ChatColor.YELLOW+"Halo, Kamu Belum Vote silakan vote di vote.renderycrafty.net dan dapatkan hadiah");
+    if (shouldNotice) {
+    player.sendMessage(ChatColor.YELLOW+nvmsg);
+    }
   }
 } else {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
   String logme = "Error"+status+response;
   Main.getInstance().getLogger().severe(logme);
+  });
 }
 http.disconnect();
 } catch(IOException q){
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
   String qstr = q.toString();
   Main.getInstance().getLogger().severe(qstr);
+  });
 }
+      
+    });//async?
       
     }
 
 public void debug(String debugstr) {
+  Bukkit.getScheduler().runTask(Main.getInstance(), () -> {
+
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
+  });
 }
   
 }

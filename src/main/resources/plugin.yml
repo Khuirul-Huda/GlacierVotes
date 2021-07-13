@@ -1,6 +1,6 @@
 name: GlacierVotes
 main: me.khuirulhuda.glaciervotes.Main
-version: 1.0-SNAPSHOT
+version: 1.5-SNAPSHOT
 website: https://khuirul-huda.github.io/GlacierVotes
 description: Simple plugin to receive votes from minecraft pe sites
 author: Khuirul-Huda
