@@ -34,4 +34,6 @@ play.renderycrafty.my.id
 
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
-Not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/)
+
+This plugin is not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/)
+The developer is not responsible for any damage, accident, data loss or other things caused by this plugin. But the developer made sure that this plugin has been tested And proven safe
