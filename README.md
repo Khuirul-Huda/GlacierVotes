@@ -7,15 +7,15 @@
 
 
 # GlacierVotes
-GlacierVotes is a lightweight spigot plugin to give rewards for your votes.
-
+GlacierVotes is a lightweight spigot plugin to give rewards for your votes from minecraftpocket-servers.com. make sure your server stays on top of all the server list sites including the Minecraft PE/BE server list site
 ## About
 Glaciervotes are made for servers that usually use Geyser and are registered at minecraftpocket-servers.com (Minecraft PE voting sites)
+Just simple plugin.
 
 ## Why ?
 1. Tell the player when he hasn't voted 
 2. Execute command on player join when someone votes for your server
-3. Simple Setup ( no additional port needed )
+3. Simple Setup ( no additional port needed ) 
 4. Simple & fast
 
 ## How to use
