@@ -48,6 +48,7 @@ debug: false
 # ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ #
 # Discord Webhook URL
 webhook: "null"
+avatarurl: "https://"
 servername: "RenderyCrafty" #Your server name
 username: "Vote Logger"
 thumbnail: "https://files.yourserver.net" #thumbnail for embed

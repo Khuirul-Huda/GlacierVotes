@@ -23,6 +23,7 @@ import java.io.InputStream;
 import org.bukkit.Bukkit;
 import java.util.*;
 import org.bukkit.scheduler.BukkitRunnable;
+import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
 
 
 public class Vote implements Listener {
@@ -71,9 +72,17 @@ if (spasi) {
       final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
       final String gnamee = gname;
       final String fnamee = fname;
+      //Webhook Variables
+      final String whservername = Main.getInstance().getConfig().getString("servername");
+      final String whfooter = Main.getInstance().getConfig().getString("footer");
+      final String whthumbnail = Main.getInstance().getConfig().getString("thumbnail");
+      final String whusername = Main.getInstance().getConfig().getString("username");
+      final String whdescription = Main.getInstance().getConfig().getString("description").replaceAll("%player%", gnamee);
+      final String whavatar = Main.getInstance().getConfig().getString("avatarurl");
+      final String whurl = Main.getInstance().getConfig().getString("webhook");
+      final boolean whenabled = !whurl.equalsIgnoreCase("null");
       
 Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () -> {
-
     
 try {
 URL url = new URL(api);
@@ -150,7 +159,25 @@ httpp.disconnect();
   Main.getInstance().getLogger().severe(logp);
   });
 }
-    //runCommand();
+    
+    //Webhook
+    if (whenabled) {
+      DiscordWebhook webhook = new DiscordWebhook(whurl);
+      webhook.setAvatarUrl(whavatar);
+      webhook.setUsername(whusername);
+      webhook.setTts(true);
+      webhook.addEmbed(new DiscordWebhook.EmbedObject()
+            .setTitle(whservername)
+            .setDescription(whdescription)
+            .setColor(Color.GREEN)
+    .setThumbnail(whthumbnail)
+    .setFooter(whfooter)
+    );
+      webhook.execute();
+      
+    }
+    
+    
   } 
   if ( response.contains("2")) {
     //voted claimed
