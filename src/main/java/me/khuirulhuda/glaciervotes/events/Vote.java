@@ -175,7 +175,7 @@ httpp.disconnect();
             .setDescription(whdescription)
             .setColor(Color.GREEN)
     .setThumbnail(whthumbnail)
-    .setFooter(whfooter)
+    .setFooter(whthumbnail, whfooter)
     );
       webhook.execute();
       
