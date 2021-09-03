@@ -8,6 +8,7 @@
 
 # GlacierVotes
 GlacierVotes is a lightweight spigot plugin to give rewards for your votes from minecraftpocket-servers.com. make sure your server stays on top of all the server list sites including the Minecraft PE/BE server list site
+
 ## About
 Glaciervotes are made for servers that usually use Geyser and are registered at minecraftpocket-servers.com (Minecraft PE voting sites)
 Just simple plugin.
@@ -30,10 +31,11 @@ Just simple plugin.
 
 # Test Server
 mc.renderycrafty.my.id
-play.renderycrafty.my.id
+
 
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
+
 
 This plugin is not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/)
 The developer is not responsible for any damage, accident, data loss or other things caused by this plugin. But the developer made sure that this plugin has been tested And proven safe
