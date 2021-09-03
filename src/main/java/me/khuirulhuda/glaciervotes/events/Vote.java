@@ -22,6 +22,10 @@ import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.bukkit.Bukkit;
 import java.util.*;
+import java.awt.Color;
+import java.io.OutputStream;
+import java.lang.reflect.Array;
+import javax.net.ssl.HttpsURLConnection;
 import org.bukkit.scheduler.BukkitRunnable;
 import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
 
