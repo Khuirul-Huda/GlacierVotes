@@ -4,7 +4,7 @@
 # not affiliated with minecraftpocket-servers.com
 
 ##Config Version (DONT TOUCH!)
-configver: 1.1
+configver: 2
 
 ##API KEY IS REQUIRED !
 ##API KEY from minecraftpocket-servers.com
@@ -24,3 +24,33 @@ commands:
 
 ##Enable Debug Mode? (Show More Information)
 debug: false
+
+
+#### DISCORD WEBHOOK SECTION ▁▁▁▁▁▁▁▁▁▁
+
+##Enable discord webhook? "null" if you don't want this feature. 
+# 
+# ⚠️ WARNING ⚠️
+#
+# Beware that this doesn't escape the JSON strings!
+#  i highly recommend to use json escaper online because this part uses JSON!
+#
+# Taken from the site https://www.freeformatter.com/json-escape.html
+#
+# Backspace is replaced with \b
+# Form feed is replaced with \f
+# Newline is replaced with \n
+# Carriage return is replaced with \r
+# Tab is replaced with \t
+# Double quote is replaced with \"
+# Backslash is replaced with \\
+#
+# ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ #
+# Discord Webhook URL
+webhook: "null"
+servername: "RenderyCrafty" #Your server name
+username: "Vote Logger"
+thumbnail: "https://files.yourserver.net" #thumbnail for embed
+description: "%player% Thank you for your votes!" # %player% as Player
+footer: "Vote https://vote.yourserver.net"
+
