@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.nio.charset.StandardCharsets;
+
 /** Thanks for https://gist.github.com/k3kdude/fba6f6b37594eae3d6f9475330733bdb
  * 
  * /
