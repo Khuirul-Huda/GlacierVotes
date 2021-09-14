@@ -4,7 +4,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Khuirul-Huda/GlacierVotes?style=for-the-badge)<br>
 ![Author](https://img.shields.io/badge/AUTHOR-Khuirul%20Huda-green?style=for-the-badge)<br>
 [![hits](https://hits.deltapapa.io/github/Khuirul-Huda/GlacierVotes.svg)](#)
-
+![Vuln](https://snyk.io/test/github/Khuirul-Huda/GlacierVotes/badge.svg)
 
 # GlacierVotes
 GlacierVotes is a lightweight spigot plugin to give rewards for your votes from minecraftpocket-servers.com. make sure your server stays on top of all the server list sites including the Minecraft PE/BE server list site
