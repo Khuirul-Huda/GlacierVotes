@@ -32,6 +32,8 @@ Just simple plugin.
 # Test Server
 mc.renderycrafty.my.id
 
+# Discord
+https://go.khuirulhuda.my.id/discord
 
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
