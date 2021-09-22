@@ -176,7 +176,7 @@ httpp.disconnect();
             .setDescription(whdescription)
             .setColor(Color.GREEN)
             .addField("Logging", "true", true)
-            .setAuthor("GlacierVotes V2")
+             .setAuthor("GlacierVotes Beta V2", "https://github.com/Khuirul-Huda", "https://avatars.githubusercontent.com/u/67778682?s=48&v=4")
     .setThumbnail(whthumbnail)
     .setFooter(whthumbnail, whfooter)
     );
