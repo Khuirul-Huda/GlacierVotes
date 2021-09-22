@@ -167,7 +167,7 @@ httpp.disconnect();
     //Webhook
     if (whenabled) {
             DiscordWebhook webhook = new DiscordWebhook(whurl);
-      webhook.setContent("GlacierVotes Beta V2")
+      webhook.setContent("GlacierVotes Beta V2");
       webhook.setAvatarUrl(whavatar);
       webhook.setUsername(whusername);
       webhook.setTts(true);
