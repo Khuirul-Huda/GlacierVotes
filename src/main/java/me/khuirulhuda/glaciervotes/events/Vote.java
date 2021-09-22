@@ -48,7 +48,7 @@ public class Vote implements Listener {
         debug("Using API KEY : "+apikey);
       }
       
-      Player player = event.getPlayer();
+      final Player player = event.getPlayer();
       String name = player.getName();
       if (debugmode) {
         debug("Player Joined "+name);
@@ -71,7 +71,7 @@ if (spasi) {
    fname = name.replace(" ", "%20");
   //String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
 } 
-
+      final String httperrormsg = "Internal Error has occured! Try Again Later";
       final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
       final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
       final String gnamee = gname;
