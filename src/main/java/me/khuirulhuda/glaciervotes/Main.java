@@ -39,25 +39,5 @@ public class Main extends JavaPlugin implements Listener {
     public static Main getInstance() {
       return INSTANCE;
     }
-    
-    public FileConfiguration getCustomConfig() {
-        return this.customConfig;
-    }
-    
-   
-    //old
-    private void createCustomConfig() {
-        customConfigFile = new File(getDataFolder(), "config.yml");
-        if (!customConfigFile.exists()) {
-            customConfigFile.getParentFile().mkdirs();
-            saveResource("config.yml", false);
-         }
-        
-        customConfig= new YamlConfiguration();
-        try {
-            customConfig.load(customConfigFile);
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
