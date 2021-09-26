@@ -179,14 +179,12 @@ httpp.disconnect();
       webhook.execute();
       
     }
-    
   } 
   if ( response.contains("2")) {
     //voted claimed
-    
   }
   if ( response.contains("0")) {
-    // not found
+    // not found || no votes
     if (shouldNotice) {
     player.sendMessage(ChatColor.YELLOW+nvmsg);
     }
@@ -207,7 +205,6 @@ http.disconnect();
   });
 }
     });//async?
-      
     }
 
 public void debug(String debugstr) {
