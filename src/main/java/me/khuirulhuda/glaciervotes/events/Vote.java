@@ -31,7 +31,6 @@ import javax.net.ssl.HttpsURLConnection;
 import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
 import me.khuirulhuda.glaciervotes.Main;
 
-
 public class Vote implements Listener {
 
     @EventHandler(priority=EventPriority.HIGHEST)
@@ -64,7 +63,6 @@ public class Vote implements Listener {
       int sploc = gname.indexOf(" ");
       gname = gname.substring(0, sploc);
     } else {
-      
     }
     
 if (spasi) {
@@ -140,7 +138,6 @@ if ( 200 <= responseCode && responseCode <= 299 ) {
     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", player.getName()));
         });
       }
-    
 }
     player.sendMessage("Terimakasih sudah vote");
     String claimapiurl = "http://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key="+apikey+"&username="+fnamee;
@@ -163,7 +160,6 @@ httpp.disconnect();
   Main.getInstance().getLogger().severe(logp);
   });
 }
-    
     //Webhook
     if (whenabled) {
             DiscordWebhook webhook = new DiscordWebhook(whurl);

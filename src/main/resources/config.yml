@@ -24,7 +24,6 @@ commands:
 ##Enable Debug Mode? (Show More Information)
 debug: false
 
-
 #### DISCORD WEBHOOK SECTION ▁▁▁▁▁▁▁▁▁▁
 
 ##Enable discord webhook? "null" if you don't want this feature. 
@@ -53,4 +52,3 @@ username: "Vote Logger"
 thumbnail: "https://files.yourserver.net" #thumbnail for embed
 description: "%player% Thank you for your votes!" # %player% as Player
 footer: "Vote https://vote.yourserver.net"
-
