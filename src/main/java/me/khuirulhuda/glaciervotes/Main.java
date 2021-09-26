@@ -16,8 +16,7 @@ import me.khuirulhuda.glaciervotes.bstats.Metrics;
 
 public class Main extends JavaPlugin implements Listener {
   
-  private File customConfigFile;
-  private FileConfiguration customConfig;
+  
   private static Main INSTANCE;
   
     @Override
