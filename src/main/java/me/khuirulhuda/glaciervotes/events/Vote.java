@@ -1,33 +1,36 @@
 package me.khuirulhuda.glaciervotes.events;
 
-import me.khuirulhuda.glaciervotes.Main;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import java.net.HttpURLConnection;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.entity.Player;
+import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.logging.Logger;
 import java.io.File;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.ChatColor;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
-import org.bukkit.Bukkit;
 import java.util.*;
 import java.awt.Color;
 import java.io.OutputStream;
 import java.lang.reflect.Array;
 import javax.net.ssl.HttpsURLConnection;
-import org.bukkit.scheduler.BukkitRunnable;
+
+
 import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
+import me.khuirulhuda.glaciervotes.Main;
 
 
 public class Vote implements Listener {
