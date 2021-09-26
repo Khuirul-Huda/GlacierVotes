@@ -28,6 +28,9 @@ this repo maybe contains unstable changes/code consider using spigotmc version f
 4. Reload the plugin
 5. You're done ✅
 
+# Updating
+Like other plugins but if there's config update you must backup your "config.yml" and delete before updating
+
 # Stats
 ![stats](https://bstats.org/signatures/bukkit/Glaciervotes.svg)
 
