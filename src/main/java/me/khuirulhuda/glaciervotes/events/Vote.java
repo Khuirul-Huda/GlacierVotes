@@ -210,7 +210,6 @@ http.disconnect();
   Main.getInstance().getLogger().severe(qstr);
   });
 }
-      
     });//async?
       
     }
@@ -221,5 +220,4 @@ public void debug(String debugstr) {
   Main.getInstance().getLogger().warning(ChatColor.WHITE+debugstr);
   });
 }
-  
 }

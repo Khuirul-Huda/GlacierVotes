@@ -15,7 +15,6 @@ import me.khuirulhuda.glaciervotes.bstats.Metrics;
 import me.khuirulhuda.glaciervotes.events.Vote;
 import me.khuirulhuda.glaciervotes.commands.Reload;
 
-
 public class Main extends JavaPlugin implements Listener {
   
   private static Main INSTANCE;
