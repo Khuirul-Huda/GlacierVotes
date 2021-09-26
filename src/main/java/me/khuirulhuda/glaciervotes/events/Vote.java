@@ -28,7 +28,6 @@ import java.io.OutputStream;
 import java.lang.reflect.Array;
 import javax.net.ssl.HttpsURLConnection;
 
-
 import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
 import me.khuirulhuda.glaciervotes.Main;
 
@@ -67,8 +66,6 @@ public class Vote implements Listener {
     } else {
       
     }
-    
-    
     
 if (spasi) {
    fname = name.replace(" ", "%20");
@@ -186,7 +183,6 @@ httpp.disconnect();
       webhook.execute();
       
     }
-    
     
   } 
   if ( response.contains("2")) {

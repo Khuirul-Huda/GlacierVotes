@@ -21,7 +21,6 @@ commands:
 - give %player% diamond_sword 1
 - give %player% diamond_axe 1
 
-
 ##Enable Debug Mode? (Show More Information)
 debug: false
 
