@@ -22,8 +22,5 @@ public class CheckAssistant {
     this.comment = comment;
   }
   
-  public String getComment() {
-    //TO DO
-  }
-  
+ 
 }
