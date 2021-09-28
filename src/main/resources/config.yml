@@ -24,6 +24,9 @@ commands:
 ##Enable Debug Mode? (Show More Information)
 debug: false
 
+## Disable voting check for new players? (prevent join spam bot)
+disablecheck: false
+
 #### DISCORD WEBHOOK SECTION ▁▁▁▁▁▁▁▁▁▁
 
 ##Enable discord webhook? "null" if you don't want this feature. 
