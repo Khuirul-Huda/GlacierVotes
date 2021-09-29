@@ -43,6 +43,5 @@ https://go.khuirulhuda.my.id/discord
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
 
-
 This plugin is not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/)
 The developer is not responsible for any damage, accident, data loss or other things caused by this plugin. But the developer made sure that this plugin has been tested And proven safe
