@@ -14,6 +14,7 @@ import java.io.File;
 import me.khuirulhuda.glaciervotes.bstats.Metrics;
 import me.khuirulhuda.glaciervotes.events.Vote;
 import me.khuirulhuda.glaciervotes.commands.Reload;
+import me.khuirulhuda.glaciervotes.commands.VoteCommand;
 
 public class Main extends JavaPlugin implements Listener {
   
@@ -24,6 +25,7 @@ public class Main extends JavaPlugin implements Listener {
         INSTANCE = this;
         saveDefaultConfig();
         this.getCommand("gvreload").setExecutor(new Reload());
+        this.getCommand("vote").setExecutor(new VoteCommand());
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
         int pluginId = 11531; //DON'T TOUCH!
