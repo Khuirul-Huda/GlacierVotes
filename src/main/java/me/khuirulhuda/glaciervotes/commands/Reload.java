@@ -1,7 +1,6 @@
 package me.khuirulhuda.glaciervotes.commands;
 
 import me.khuirulhuda.glaciervotes.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
