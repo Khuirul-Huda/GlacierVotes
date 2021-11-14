@@ -35,7 +35,7 @@ Like other plugins but if there's config update you must backup your "config.yml
 ![stats](https://bstats.org/signatures/bukkit/Glaciervotes.svg)
 
 # Test Server
-mc.renderycrafty.my.id
+mc.renderycrafty.my.id (Inactive)
 
 # Discord
 https://go.khuirulhuda.my.id/discord
