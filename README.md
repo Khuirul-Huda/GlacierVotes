@@ -1,3 +1,7 @@
+THIS PLUGIN IS BEING RECODED
+
+=========================
+
 ![GitHub all releases](https://img.shields.io/github/downloads/Khuirul-Huda/GlacierVotes/total?style=for-the-badge)<br>
 [![GitHub license](https://img.shields.io/github/license/Khuirul-Huda/GlacierVotes?style=for-the-badge)](https://github.com/Khuirul-Huda/GlacierVotes/blob/main/LICENSE)<br>
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/Khuirul-Huda/GlacierVotes/main?style=for-the-badge)<br>
