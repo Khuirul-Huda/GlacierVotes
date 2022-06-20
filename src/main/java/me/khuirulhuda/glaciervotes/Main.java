@@ -13,7 +13,7 @@ public class Main extends JavaPlugin implements Listener {
   
   private static Main INSTANCE;
   
-    @Override
+	@Override
     public void onEnable() {
         INSTANCE = this;
         saveDefaultConfig();
@@ -22,7 +22,9 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(new Vote(), this);
         this.getLogger().info(ChatColor.GREEN+"GlacierVotes Successfully Enabled");
         int pluginId = 11531; //DON'T TOUCH!
-        Metrics metrics = new Metrics(this, pluginId);
+        
+        @SuppressWarnings("unused")
+		Metrics metrics = new Metrics(this, pluginId);
         
     }
     

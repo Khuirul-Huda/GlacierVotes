@@ -4,30 +4,17 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.entity.Player;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.logging.Logger;
-import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import java.util.*;
 import java.awt.Color;
-import java.io.OutputStream;
-import java.lang.reflect.Array;
-import javax.net.ssl.HttpsURLConnection;
-
 import me.khuirulhuda.glaciervotes.utils.DiscordWebhook;
 import me.khuirulhuda.glaciervotes.Main;
 
@@ -69,7 +56,7 @@ if (spasi) {
    fname = name.replace(" ", "%20");
   //String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
 } 
-      final String httperrormsg = "Internal Error has occured! Try Again Later";
+      //final String httperrormsg = "Internal Error has occured! Try Again Later";
       final String api = "https://minecraftpocket-servers.com/api/?object=votes&element=claim&key="+apikey+"&username="+fname;
       final List<String> listcmd = Main.getInstance().getConfig().getStringList("commands");
       final String gnamee = gname;
