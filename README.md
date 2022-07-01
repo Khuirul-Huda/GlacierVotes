@@ -1,4 +1,5 @@
 THIS PLUGIN IS BEING RECODED
+Warning: Stale branch. Go to `rewrite` branch instead
 
 =========================
 
