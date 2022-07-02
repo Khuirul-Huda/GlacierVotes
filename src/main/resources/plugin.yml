@@ -11,3 +11,6 @@ commands:
   gvreload:
     description: Reload the plugin (console only)
     usage: /gvreload
+  vote:
+    description: information on how to vote
+    usage: /vote
