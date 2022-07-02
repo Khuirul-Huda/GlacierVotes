@@ -8,6 +8,6 @@ load: POSTWORLD
 api-version: "1.13"
 
 commands:
-	gvreload:
-		description: Reload the plugin (console only)
-		usage: /gvreload
+  gvreload:
+    description: Reload the plugin (console only)
+    usage: /gvreload
