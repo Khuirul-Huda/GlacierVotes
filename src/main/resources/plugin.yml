@@ -1,12 +1,13 @@
 name: GlacierVotes
 main: me.khuirulhuda.glaciervotes.Main
-version: 1.9.3-SNAPSHOT
+version: 1.9.4
 website: https://khuirul-huda.github.io/GlacierVotes
 description: Simple plugin to receive votes from minecraft pe sites
 author: Khuirul-Huda
 load: POSTWORLD
+api-version: "1.13"
 
 commands:
-    gvreload:
-        description: Reload the plugin (console only)
-        usage: /gvreload
+	gvreload:
+		description: Reload the plugin (console only)
+		usage: /gvreload
