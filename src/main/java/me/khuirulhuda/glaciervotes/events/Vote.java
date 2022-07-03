@@ -68,8 +68,7 @@ public class Vote implements Listener {
 		//final String whfooter = Main.getInstance().getConfig().getString("footer");
 		//final String whthumbnail = Main.getInstance().getConfig().getString("thumbnail");
 		//final String whusername = Main.getInstance().getConfig().getString("username");
-		//final String whdescription = Main.getInstance().getConfig().getString("description").replaceAll("%player%",
-				gnamee);
+		//final String whdescription = Main.getInstance().getConfig().getString("description").replaceAll("%player%",gnamee);
 		//final String whavatar = Main.getInstance().getConfig().getString("avatarurl");
 		//final String whurl = Main.getInstance().getConfig().getString("webhook");
 		//final boolean whenabled = !whurl.equalsIgnoreCase("null");
