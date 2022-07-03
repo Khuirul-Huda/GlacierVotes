@@ -6,12 +6,13 @@
 ##Config Version (DONT TOUCH!)
 configver: 2
 
-##API KEY IS REQUIRED !
+##API KEY IS REQUIRED !!
 ##API KEY from minecraftpocket-servers.com
 apikey: "null"
 
-#Send message to players?(no-Vote)
+#Send message to players?when no vote received
 notice: true
+
 #Notice Message
 nvmessage: "Heyy, please support this server with your votes"
 
@@ -25,29 +26,21 @@ commands:
 debug: false
 
 #Text for output -> /vote
-commandmsg: "null"
+commandmsg: "Vote here: https://yourserver.net/vote"
 
-## Disable voting check for new players? (prevent join spam bot)
+## Disable voting check for new players? (prevent join spam)
 disablecheck: false
+
+# **DISCORD WEBHOOK FEATURE CURRENTLY DISABLED**
 
 #### DISCORD WEBHOOK SECTION ▁▁▁▁▁▁▁▁▁▁
 
 ##Enable discord webhook? "null" if you don't want this feature. 
 # 
-# ⚠️ WARNING ⚠️
+#                     ⚠️ WARNING ⚠️
 #
-# Beware that this doesn't escape the JSON strings!
+#      Beware that this doesn't escape the JSON strings!
 #  i highly recommend to use json escaper online because this part uses JSON!
-#
-# Taken from the site https://www.freeformatter.com/json-escape.html
-#
-# Backspace is replaced with \b
-# Form feed is replaced with \f
-# Newline is replaced with \n
-# Carriage return is replaced with \r
-# Tab is replaced with \t
-# Double quote is replaced with \"
-# Backslash is replaced with \\
 #
 # ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ #
 # Discord Webhook URL
