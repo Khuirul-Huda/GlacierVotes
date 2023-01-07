@@ -42,7 +42,7 @@ Like other plugins but if there's config update you must backup your "config.yml
 mc.renderycrafty.my.id (Inactive)
 
 # Discord
-https://go.khuirulhuda.my.id/discord
+https://go.khuirulhuda.me.eu.org/discord
 
 # Notice
 Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
