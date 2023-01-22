@@ -1,4 +1,4 @@
-THIS PLUGIN IS BEING RECODED
+
 
 =========================
 
@@ -14,10 +14,8 @@ THIS PLUGIN IS BEING RECODED
 GlacierVotes is a lightweight spigot plugin to give rewards for your votes from minecraftpocket-servers.com. make sure your server stays on top of all the server list sites including the Minecraft PE/BE server list site
 
 ## About
-Glaciervotes are made for servers that usually use Geyser and are registered at minecraftpocket-servers.com (Minecraft PE voting sites)
-Just simple plugin.
+Glaciervotes are made for servers that usually use Geyser and are registered at minecraftpocket-servers.com (voting sites).
 
-this repo maybe contains unstable changes/code consider using spigotmc version for stability. please use release version instead
 
 ## Why ?
 1. Tell the player when he hasn't voted 
@@ -32,20 +30,24 @@ this repo maybe contains unstable changes/code consider using spigotmc version f
 4. Reload the plugin
 5. You're done ✅
 
+## Downloads
+[Stable](https://www.spigotmc.org/resources/glaciervotes.94245/)
+
+[Stable & Dev](https://github.com/Khuirul-Huda/GlacierVotes/releases)
+
 # Updating
 Like other plugins but if there's config update you must backup your "config.yml" and delete before updating
 
 # Stats
 ![stats](https://bstats.org/signatures/bukkit/Glaciervotes.svg)
 
-# Test Server
-mc.renderycrafty.my.id (Inactive)
+# Servers that use this plugin
+`want your server here? feel free to contact me!`
 
 # Discord
 https://go.khuirulhuda.me.eu.org/discord
 
 # Notice
-Actually this plugin is for my private use but if you want to use it or contribute you are very welcome
+Actually this plugin is for my private use but if you want to use it or contribute you are very welcome!
 
-This plugin is not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/)
-The developer is not responsible for any damage, accident, data loss or other things caused by this plugin. But the developer made sure that this plugin has been tested And proven safe
+This plugin is not affiliated with [Minecraftpocket-servers.com](https://minecraftpocket-servers.com/).
